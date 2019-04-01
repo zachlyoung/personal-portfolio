@@ -5,20 +5,25 @@ body {
 
 h1 {
     color: white;
-    font-weight: 900;
+    font-weight: 700;
     font-size: 40pt;
 }
 
 h2 {
     margin-bottom: 20px;
-    font-weight: 700;
+    font-weight: 300;
     font-size: 32pt;
 }
 
 h3 {
     color: white;
-    font-weight: 400;
+    font-weight: 300;
     font-size: 18pt;
+    cursor: pointer;
+}
+
+em {
+    font-weight: 100;
 }
 
 #page-wrapper {
@@ -42,6 +47,13 @@ h3 {
     main {
         overflow-y: auto;
         width: 100% !important;
+    }
+}
+
+@media (max-width: 500px)
+{
+    .grid {
+        grid-template-columns: 1fr 1fr !important;
     }
 }
 
@@ -72,7 +84,7 @@ a:link {
 
 #progress-bar {
     height: 100%;
-    width: 20px;
+    width: 10px;
     margin-right: 30px;
     background: #caa53e;
 }
@@ -89,7 +101,39 @@ main {
 }
 
 section {
-    box-sizing: border-box;
     margin-top: 15vh;
     height: 85vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.underline {
+    height: 10px;
+    width: 50px;
+    margin-bottom: 20px;
+    background: #caa53e;
+}
+
+.grid {
+    margin-top: 20px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 10px;
+}
+
+.panel {
+    background: #000;
+    width: 100%;
+    padding-top: 100%;
+}
+
+.button-outline {
+    margin-top: 40px;
+    padding: 10px 20px;
+    border: 3px solid #000;
+    background-color: #fff;
+    font-size: 12pt;
+    font-weight: 300;
+    cursor: pointer;
+    align-self: center;
 }
