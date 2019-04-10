@@ -48,14 +48,30 @@ em {
     flex-direction: column;
 }
 
+#button-open {
+    position: fixed;
+    top: 15px;
+    right: 15px;
+    cursor: pointer;
+}
+
 aside {
     position: fixed;
+    z-index: 1;
     height: 100%;
     width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
     background: #000;
+}
+
+#button-close {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    color: white;
+    cursor: pointer;
 }
 
 #aside-wrapper {
@@ -73,13 +89,10 @@ aside {
     background: #caa53e;
 }
 
-main {
-    display: flex;
-    justify-content: center;
-}
-
 #main-wrapper {
-    width: 80%;
+    position: relative;
+    margin: 0 60px;
+    overflow: hidden;
 }
 
 section {
@@ -148,16 +161,30 @@ section {
         height: 100%;
     }
 
+    #button-open {
+        display: none;
+    }
+
     aside {
-        position: static;
+        position: relative;
         height: auto;
         width: 35%;
         min-width: 350px;
     }
 
+    #button-close {
+        display: none;
+    }
+
     main {
-        overflow-y: auto;
         width: 65%;
+        overflow-y: auto;
+        scroll-behavior: smooth;
+    }
+
+    #main-wrapper {
+        width: 80%;
+        margin: 0 auto;
     }
 
     section {
