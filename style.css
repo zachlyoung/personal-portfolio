@@ -1,6 +1,7 @@
+/* General */
+
 html, body {
     height: 100%;
-    width: 100%;
 }
 
 body {
@@ -30,30 +31,58 @@ h3 {
     font-size: 18pt;
 }
 
-.link {
-    cursor: pointer;
-}
-
-.link:hover {
-    font-weight: 500;
-}
-
 em {
     font-weight: 100;
 }
 
+/* DOM */
+
 #page-wrapper {
-    width: 100%;
+    height: 100%;
     display: flex;
     flex-direction: column;
 }
 
-#button-open {
+#progress-bar-mobile {
     position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    height: 5px;
+    background: #caa53e;
+
+}
+
+#button-nav {
+    position: fixed;
+    z-index: 2;
     top: 15px;
     right: 15px;
+    height: 30px;
+    width: 30px;
     cursor: pointer;
 }
+
+.nav-bar {
+    position: absolute;
+    height: 4px;
+    width: 100%;
+    background: #fff;
+}
+
+#top-bar {
+    top: 3px;
+}
+
+#middle-bar {
+    top: 13px;
+}
+
+#bottom-bar {
+    top: 23px;
+}
+
+/* Aside */
 
 aside {
     position: fixed;
@@ -64,14 +93,6 @@ aside {
     justify-content: center;
     align-items: center;
     background: #000;
-}
-
-#button-close {
-    position: absolute;
-    top: 15px;
-    right: 15px;
-    color: white;
-    cursor: pointer;
 }
 
 #aside-wrapper {
@@ -89,10 +110,25 @@ aside {
     background: #caa53e;
 }
 
-#main-wrapper {
+.link {
+    cursor: pointer;
+}
+
+.link:hover {
+    font-weight: 500;
+}
+
+/* Main */
+
+main {
     position: relative;
+    height: 100%;
+    overflow-y: auto;
+    scroll-behavior: smooth;
+}
+
+#main-wrapper {
     margin: 0 60px;
-    overflow: hidden;
 }
 
 section {
@@ -161,7 +197,11 @@ section {
         height: 100%;
     }
 
-    #button-open {
+    #progress-bar-mobile {
+        display: none;
+    }
+
+    #button-nav {
         display: none;
     }
 
@@ -172,29 +212,23 @@ section {
         min-width: 350px;
     }
 
-    #button-close {
-        display: none;
-    }
-
     main {
         width: 65%;
-        overflow-y: auto;
-        scroll-behavior: smooth;
     }
 
     #main-wrapper {
         width: 80%;
         margin: 0 auto;
     }
-
-    section {
-        margin-top: 15vh;
-        height: 85vh;
-    }
 }
 
 @media (min-width: 750px)
 {
+    section {
+        margin-top: 15vh;
+        height: 85vh;
+    }
+
     .grid {
         grid-template-columns: 1fr 1fr 1fr;
     }
