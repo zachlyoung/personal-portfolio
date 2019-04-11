@@ -5,7 +5,11 @@ var isExpanded;
 
 $(document).ready(function () {
     isAsideOpen = true;
-    isExpanded = false;
+    if ($(window).width() >= 1000){
+        isExpanded = true;
+    } else {
+        isExpanded = false;
+    }
 });
 
 //Resizing
