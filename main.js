@@ -25,6 +25,7 @@ $(window).on('resize', function(){
         isExpanded = true;
     } else if ($(this).width() < 1000 && isExpanded) {
         $('aside').hide();
+        $('.nav-bar').css('background', '#000');
         isAsideOpen = false;
         isExpanded = false;
     }
