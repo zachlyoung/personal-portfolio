@@ -319,6 +319,7 @@ section {
     min-width: 100px;
     padding-top: 100%;
     background: #000;
+    cursor: pointer;
 }
 
 /* Music */
@@ -354,6 +355,7 @@ section {
     height: 100px;
     background: #000;
     flex-shrink: 0;
+    cursor: pointer;
 }
 
 @media (min-width: 1000px)
