@@ -293,7 +293,12 @@ section {
     width: 100%;
 }
 
+.about-address {
+    display: flex;
+}
+
 .contact {
+    margin-left: 10px;
     font-weight: 100;
     color: #000;
     text-decoration: none;
@@ -421,7 +426,7 @@ section {
     }
 }
 
-@media (min-width: 500px)
+@media (min-width: 550px)
 {
     /* About */ 
 
