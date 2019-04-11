@@ -7,6 +7,13 @@ $(document).ready(function () {
     isAsideOpen = true;
     if ($(window).width() >= 1000){
         isExpanded = true;
+        $('.nav-bar').css('background', '#000');
+        $('#top-bar').toggleClass("exit");
+        $('#middle-bar').toggleClass("exit");
+        $('#bottom-bar').toggleClass("exit");
+        $('#top-bar').toggleClass("open");
+        $('#middle-bar').toggleClass("open");
+        $('#bottom-bar').toggleClass("open");
     } else {
         isExpanded = false;
     }
@@ -25,7 +32,6 @@ $(window).on('resize', function(){
         isExpanded = true;
     } else if ($(this).width() < 1000 && isExpanded) {
         $('aside').hide();
-        $('.nav-bar').css('background', '#000');
         isAsideOpen = false;
         isExpanded = false;
     }
@@ -49,10 +55,22 @@ function updateProgressMobile() {
 $('#button-nav').click(function() {
     if (isAsideOpen) {
         $('.nav-bar').css('background', '#000');
+        $('#top-bar').toggleClass("exit");
+        $('#middle-bar').toggleClass("exit");
+        $('#bottom-bar').toggleClass("exit");
+        $('#top-bar').toggleClass("open");
+        $('#middle-bar').toggleClass("open");
+        $('#bottom-bar').toggleClass("open");
         $('aside').fadeOut();
         isAsideOpen = false;
     } else {
         $('.nav-bar').css('background', '#fff');
+        $('#top-bar').toggleClass("exit");
+        $('#middle-bar').toggleClass("exit");
+        $('#bottom-bar').toggleClass("exit");
+        $('#top-bar').toggleClass("open");
+        $('#middle-bar').toggleClass("open");
+        $('#bottom-bar').toggleClass("open");
         $('aside').fadeIn();
         isAsideOpen = true;
     }
