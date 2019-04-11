@@ -84,6 +84,7 @@ $('.link').click(function () {
     $('main').scrollTop($('#' + section).position().top);
     if ($(window).width() < 1000) {
         $('.nav-bar').css('background', '#000');
+        toggleNav();
         $('aside').fadeOut();
         isAsideOpen = false;
     }
