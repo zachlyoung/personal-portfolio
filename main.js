@@ -30,7 +30,7 @@ $(window).on('resize', function(){
     }
 });
 
-//Progress Bar
+//Progress Bar and Active Links
 
 $('main').scroll(function(){
     updateProgress();
@@ -45,7 +45,7 @@ function updateProgress() {
 }
 
 function updateActive() {
-    if ($("main").scrollTop() + $(window).height() > $('main')[0].scrollHeight - 5) {
+    if ($("main").scrollTop() + $(window).height() > $('main')[0].scrollHeight - 5 || $("main").scrollTop() >= $("#blog").position().top) {
         $(".link").removeClass("active");
         $(".link").eq(4).addClass("active");
     } else if ($("main").scrollTop() < $("#code").position().top) {
