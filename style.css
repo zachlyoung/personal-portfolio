@@ -223,7 +223,6 @@ main {
 #main-wrapper {
     position: relative;
     margin: 0 60px 40px;
-    overflow: hidden;
 }
 
 section {

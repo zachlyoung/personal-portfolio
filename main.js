@@ -82,7 +82,7 @@ $('#button-nav').click(function() {
 
 $('.link').click(function () {
     var section = $(this).text().toLowerCase();
-    $('main').scrollTop($('#' + section).position().top);
+    $('main').scrollTop($('#' + section).position().top + parseInt($('#' + section).css("marginTop")));
     if ($(window).width() < mobileBreakpoint) {
         $('.nav-bar').css('background', '#000');
         toggleNav();
