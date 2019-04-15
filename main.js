@@ -1,11 +1,12 @@
 //Initialization
 
-var isAsideOpen;
+var mobileBreakpoint = 1100;
+var isAsideOpen = true;
 var isExpanded;
 
 $(document).ready(function () {
     isAsideOpen = true;
-    if ($(window).width() < 1000){
+    if ($(window).width() < mobileBreakpoint){
         isExpanded = false;
     } else {
         isExpanded = true;
@@ -19,11 +20,11 @@ $(document).ready(function () {
 $(window).on('resize', function(){
     updateProgress();
     updateActive();
-    if ($(this).width() < 1000 && isExpanded) {
+    if ($(this).width() < mobileBreakpoint && isExpanded) {
         $('aside').hide();
         isAsideOpen = false;
         isExpanded = false;
-    } else if ($(this).width() >= 1000 && !isAsideOpen) {
+    } else if ($(this).width() >= mobileBreakpoint && !isAsideOpen) {
         $('aside').show();
         isAsideOpen = true;
         isExpanded = true;
@@ -38,7 +39,7 @@ $('main').scroll(function(){
 });
 
 function updateProgress() {
-    if ($(window).width() < 1000) {
+    if ($(window).width() < mobileBreakpoint) {
         var percentage = $('main').scrollTop() / ($('main')[0].scrollHeight - $(window).height()) * 100;
         $('#progress-bar-mobile').width(percentage + '%');
     }
@@ -69,12 +70,12 @@ $('#button-nav').click(function() {
     if (isAsideOpen) {
         $('.nav-bar').css('background', '#000');
         toggleNav();
-        $('aside').fadeOut();
+        $('aside').fadeOut(250);
         isAsideOpen = false;
     } else {
         $('.nav-bar').css('background', '#fff');
         toggleNav();
-        $('aside').fadeIn();
+        $('aside').fadeIn(250);
         isAsideOpen = true;
     }
 });
@@ -82,10 +83,10 @@ $('#button-nav').click(function() {
 $('.link').click(function () {
     var section = $(this).text().toLowerCase();
     $('main').scrollTop($('#' + section).position().top);
-    if ($(window).width() < 1000) {
+    if ($(window).width() < mobileBreakpoint) {
         $('.nav-bar').css('background', '#000');
         toggleNav();
-        $('aside').fadeOut();
+        $('aside').fadeOut(250);
         isAsideOpen = false;
     }
 });
