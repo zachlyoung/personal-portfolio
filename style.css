@@ -323,6 +323,13 @@ section {
 .panel {
     width: 100%;
     min-width: 100px;
+    height: auto;
+    cursor: pointer;
+}
+
+.panel-temp {
+    width: 100%;
+    min-width: 100px;
     padding-top: 100%;
     background: #000;
     cursor: pointer;
