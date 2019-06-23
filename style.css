@@ -327,14 +327,6 @@ section {
     cursor: pointer;
 }
 
-.panel-temp {
-    width: 100%;
-    min-width: 100px;
-    padding-top: 100%;
-    background: #000;
-    cursor: pointer;
-}
-
 /* Music */
 
 #first-song, #second-song {
