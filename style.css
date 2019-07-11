@@ -87,6 +87,7 @@ p {
 .nav-bar {
     position: absolute;
     height: 4px;
+    border-radius: 2px;
     width: 100%;
     background: #fff;
 }
@@ -225,7 +226,7 @@ main {
 
 section {
     box-sizing: border-box;
-    margin-top: 40px;
+    margin-top: 80px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -234,22 +235,29 @@ section {
 .underline {
     height: 10px;
     width: 50px;
+    border-radius: 5px;
     margin-bottom: 20px;
     flex-shrink: 0;
     background: #caa53e;
 }
 
-.button-outline {
-    padding: 10px 20px;
+.button-expand {
+    padding: 15px 30px;
+    border: none;
+    border-radius: 1000px;
     align-self: center;
-    border: 3px solid #000;
-    background-color: #fff;
+    background-color: #000;
+    color: #fff;
     font-size: 12pt;
     font-weight: 300;
     cursor: pointer;
 }
 
-.button-outline:focus {
+.button-expand:hover {
+    background-color: #303030;
+}
+
+.button-expand:focus {
     outline: none;
 }
 
